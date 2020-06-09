@@ -1,0 +1,23 @@
+<div class="container">
+
+  
+  <h2 text-left>{{'HOME.TITLE' | translate}} </h2>
+
+  <div class="card">
+    <div class="card-header text-left">
+      <p> {{'HOME.TEXT' | translate}} {{myBrowserLang}}</p>
+    </div>
+    <div class="card-body text-left">
+      <h5 class="card-title"> {{'HOME.SELECTLANG' | translate}}</h5>
+
+      <div class="row">
+        <select #langselect [(ngModel)]="selectedLanguage" class="selectpicker" data-style="btn-info" (change)='changeLang($event)'>
+          <option *ngFor="let lang of languages" [ngValue]="lang">
+            {{ lang.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+</div>  
